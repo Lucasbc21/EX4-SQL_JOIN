@@ -336,10 +336,9 @@ SELECT DISTINCT fil.titulo,
 	        ELSE
 			CAST((YEAR(GETDATE()) - fil.ano) AS VARCHAR(4))
 	   END AS anos_de_diferença
-FROM filme fil, dvd dv 
+FROM filme fil, dvd dv, filme_estrela fe, estrela e
 WHERE fil.id = dv.filme_id
-      
-      
+      AND dv.data_fabricacao != '18/10/2019'
 ORDER BY fil.titulo ASC
 GO   
      
@@ -347,10 +346,10 @@ GO
       
       
        
-
+SELECT * FROM filme
 SELECT * FROM dvd
 SELECT * FROM locacao
-SELECT * FROM filme
+
 SELECT * FROM filme_estrela
 SELECT * FROM estrela
 SELECT * FROM cliente

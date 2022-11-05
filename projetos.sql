@@ -151,7 +151,7 @@ WHERE  uhp.users_id IS NULL
 SELECT u.name
 FROM users u LEFT OUTER JOIN users_has_projects uhp
 ON u.id = uhp.users_id
-WHERE uhp.users_id IS NULL
+WHERE uhp.projects_id IS NULL
 
 
 
